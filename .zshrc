@@ -109,9 +109,6 @@ alias rmdir="sudo rm -d -f -r"
 alias maid="bpython /Users/maxkonietzko/Maid-chan/MaidBasico.py"
 alias pip="python3 -m pip"
 
-# make vscode my default editor
-export EDITOR="code"
-
 # Customizable parameters.
 PROMPT_PATH_MAX_LENGTH=30
 PROMPT_DEFAULT_END=❯
