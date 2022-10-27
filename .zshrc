@@ -1,12 +1,10 @@
 # Fig pre block. Keep at the top of this file.
-export PATH="${PATH}:${HOME}/.local/bin"
-eval "$(fig init zsh pre)"
-
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/maxkonietzko/.oh-my-zsh"
 
 # Oh-my-zsh themes
-ZSH_THEME="nicoulaj"
+# ZSH_THEME="nicoulaj"
 #         "nicoulaj"
 #         "random"
 
@@ -57,6 +55,15 @@ export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.8/bin:$PATH"
 # nnn plugins
 export NNN_FIFO=/tmp/nnn.fifo
 
+# Open zellij (window manager) on start
+
+#if read -q "choice?Do you want to launch zellij? y / n: "; then
+#  sleep 2
+#  /Users/maxkonietzko/.bin/zellij
+#else
+#  clear
+#fi
+
 # Aliases
 alias lc='colorls --gs'
 alias lc.='colorls --gs -a'
@@ -70,11 +77,14 @@ alias tableback="echo '┬─┬ノ(°_°ノ)'"
 alias sus="echo ඞ"
 alias amongus="echo ඞ"
 alias amogus="echo ඞ"
+alias saySus="say sus"
+alias sayAmongus="say amongus"
+alias sayAmogus="say amogus"
 alias madness='echo "(╯°□°）╯︵ ┻━┻┬──┬ ¯"\"_(ツ) ┻━┻︵ヽ(`Д´)ﾉ︵ ┻━┻┬─┬ノ( º _ ºノ) (ノಠ益ಠ)ノ彡┻━┻"'
 alias weather='curl wttr.in'
 alias report="neofetch"
 alias specs="neofetch"
-alias vi="vim"
+#alias vi="vim"
 alias calc="python3 /Users/maxkonietzko/Python/CalculatorCLI.py"
 alias omg="echo ':o'"
 alias send="python3 /Users/maxkonietzko/Python/MailFunc.py"
@@ -90,6 +100,14 @@ alias sg='s -p Google'
 alias sg2='s -p Github'
 alias wa='node /Users/maxkonietzko/.bin/whatspup/chat.js'
 alias electron="/Users/maxkonietzko/node_modules/electron/dist/Electron.app/Contents/MacOS/Electron"
+alias bpy="bpython"
+alias hjonk="afplay '/Applications/Desktop Goose.app/Contents/Resources/Honk1.mp3'"
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push"
+alias rmdir="sudo rm -d -f -r"
+alias maid="bpython /Users/maxkonietzko/Maid-chan/MaidBasico.py"
+alias pip="python3 -m pip"
 
 # make vscode my default editor
 export EDITOR="code"
@@ -202,6 +220,8 @@ elif type compctl &>/dev/null; then
 fi
 ###-end-npm-completion-###
 
-# Fig post block. Keep at the bottom of this file.
-eval "$(fig init zsh post)"
+export NVM_DIR="/Users/maxkonietzko/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
